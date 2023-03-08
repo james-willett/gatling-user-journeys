@@ -80,8 +80,8 @@ public class AceToysSimulation extends Simulation {
     private ScenarioBuilder combinedUsersScenario = scenario("Combined Users")
             .randomSwitch()
                             .on(
-                                    Choice.withWeight(50, exec(browseUser)),
-                                    Choice.withWeight(50, exec(purchaseUser))
+                                    Choice.withWeight(80, exec(browseUser)),
+                                    Choice.withWeight(20, exec(purchaseUser))
                             );
 
     /*
@@ -89,8 +89,7 @@ public class AceToysSimulation extends Simulation {
      */
     {
         setUp(
-                browseUsersScenario.injectOpen(atOnceUsers(5)),
-                purchaseUsersScenario.injectOpen(atOnceUsers(5))
+                combinedUsersScenario.injectOpen(atOnceUsers(100))
         ).protocols(httpProtocol);
     }
 }
