@@ -75,14 +75,7 @@ public class AceToysSimulation extends Simulation {
             .exec(browseUser);
 
     private ScenarioBuilder purchaseUsersScenario = scenario("Purchase Users")
-            .exec(purchaseUser);
-
-    private ScenarioBuilder combinedUsersScenario = scenario("Combined Users")
-            .randomSwitch()
-                            .on(
-                                    Choice.withWeight(50, exec(browseUser)),
-                                    Choice.withWeight(50, exec(purchaseUser))
-                            );
+            .exec(purchaseUser);g
 
     /*
      Load Simulation
