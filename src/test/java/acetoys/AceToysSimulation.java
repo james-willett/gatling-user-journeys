@@ -75,7 +75,7 @@ public class AceToysSimulation extends Simulation {
             .exec(browseUser);
 
     private ScenarioBuilder purchaseUsersScenario = scenario("Purchase Users")
-            .exec(purchaseUser);g
+            .exec(purchaseUser);
 
     /*
      Load Simulation
