@@ -17,7 +17,7 @@ public class AceToysSimulation extends Simulation {
     /*
      Transactions
      */
-    public static ChainBuilder homepage =
+    public static ChainBuilder loadHomepage =
             exec(http("Load Home Page")
                             .get("/")
                             .check(css("#_csrf", "content").saveAs("csrfToken"))
@@ -51,14 +51,14 @@ public class AceToysSimulation extends Simulation {
      User Journeys
      */
     public static ChainBuilder browseUser =
-            exec(homepage)
+            exec(loadHomepage)
                     .pause(5)
                     .exec(selectCategory)
                     .pause(2)
                     .exec(viewProduct);
 
     public static ChainBuilder purchaseUser =
-            exec(homepage)
+            exec(loadHomepage)
                     .pause(3)
                     .exec(selectCategory)
                     .pause(2)
