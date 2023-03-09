@@ -29,7 +29,7 @@ public class AceToysSimulation extends Simulation {
                             .get("/category/all")
             );
 
-    public static ChainBuilder viewProduct =
+    public static ChainBuilder viewProductDetails =
             exec(
                     http("View Product")
                             .get("/product/darts-board")
@@ -55,14 +55,14 @@ public class AceToysSimulation extends Simulation {
                     .pause(5)
                     .exec(selectCategory)
                     .pause(2)
-                    .exec(viewProduct);
+                    .exec(viewProductDetails);
 
     public static ChainBuilder purchaseUser =
             exec(loadHomepage)
                     .pause(3)
                     .exec(selectCategory)
                     .pause(2)
-                    .exec(viewProduct)
+                    .exec(viewProductDetails)
                     .pause(3)
                     .exec(addProductToCart)
                     .pause(2)
